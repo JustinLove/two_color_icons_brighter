@@ -1,0 +1,20 @@
+{
+    "author": "wondible",
+    "build": "66943",
+    "category": [
+        "in-game",
+        "ui"
+    ],
+    "context": "client",
+    "date": "2014/06/06",
+    "description": "Use secondary color for icon outlines, and white for selected.",
+    "display_name": "Two Color Icons",
+    "enabled": true,
+    "forum": null,
+    "id": "two_color_icons",
+    "identifier": "com.wondible.pa.two_color_icons",
+    "priority": 100,
+    "requires": [],
+    "signature": "not yet implemented",
+    "version": "0.1.0"
+}
