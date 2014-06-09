@@ -6,15 +6,15 @@
         "ui"
     ],
     "context": "client",
-    "date": "2014/06/06",
+    "date": "2014/06/08",
     "description": "Use secondary color for icon outlines, and white for selected.",
     "display_name": "Two Color Icons",
     "enabled": true,
-    "forum": null,
+    "forum": "https://forums.uberent.com/threads/wip-two-color-icons.60568/",
     "id": "two_color_icons",
     "identifier": "com.wondible.pa.two_color_icons",
     "priority": 100,
     "requires": [],
     "signature": "not yet implemented",
-    "version": "0.1.0"
+    "version": "1.0.0"
 }
