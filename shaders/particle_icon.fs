@@ -1,6 +1,6 @@
-#version 150
+#version 140
 
-// textured_unlit_bgra_colorized.fs
+// particle_icon.fs
 
 #ifdef GL_ES
 precision mediump float;
@@ -17,7 +17,7 @@ out vec4 out_FragColor;
 
 void main() 
 {
-    vec4 texel = texture(Texture, v_TexCoord).bgra;
+    vec4 texel = texture(Texture, v_TexCoord).bgra; // webkit texture is bgra
     if (v_ColorPrimary.w == 0.0)
         out_FragColor = texel;
     else
@@ -28,9 +28,18 @@ void main()
         vec3 brighterSec = mix(vec3(1.0, 1.0, 1.0), v_ColorSecondary.rgb, 0.8);
         vec3 outline = v_SelectedState > 0.0 ? vec3(1.0, 1.0, 1.0) : brighterSec;
         vec3 body = v_ColorPrimary.rgb;
-        vec3 color = texel.r * mix(outline, body, pow(texel.g, 1.0 / 2.2));
+        vec3 color = texel.r * mix(outline, body, pow(texel.g, 1.0 / 2.2) / texel.a + 0.00001);
 
         float alpha = texel.a;
+
+        // check for hover
+        if (abs(v_SelectedState) > 1.5)
+        {
+            float mask = pow(texel.r, 1.0 / 2.2);
+            alpha = mix(min(1.0, 2.0 * alpha), alpha, mask);
+            color = mix(vec3(1.0, 1.0, 1.0), color, mask);
+        }
+
         out_FragColor = vec4(color, alpha * v_ColorPrimary.a);
     }
 }
