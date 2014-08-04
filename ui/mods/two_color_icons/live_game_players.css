@@ -1,0 +1,7 @@
+.outline_masked {
+  height: 16px;
+  width: 16px;
+  -webkit-mask-image: url("coui://ui/main/game/live_game/img/players_list_panel/icon_player_outline.png");
+  -webkit-mask-size: cover;
+  mask: url("#player-outline-mask");
+}
