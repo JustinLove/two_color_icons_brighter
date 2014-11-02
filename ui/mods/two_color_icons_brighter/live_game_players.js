@@ -4,7 +4,6 @@
   });
 
   var brighter = function(c, b) {
-    //return Math.min(255, Math.max(0, Math.floor(255 * Math.sqrt(c/255.0))))
     return Math.min(255, Math.max(0, Math.floor(b * c)))
   }
 

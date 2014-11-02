@@ -1,24 +1,24 @@
 {
   "author": "wondible",
-  "build": "69721",
+  "build": "74525",
   "category": [
     "in-game",
     "shader",
     "ui"
   ],
   "context": "client",
-  "date": "2014/08/03",
+  "date": "2014/11/01",
   "description": "Use secondary color for icon outlines, and white for selected.",
-  "display_name": "Two Color Icons",
+  "display_name": "Two Color Icons - Brighter",
   "forum": "https://forums.uberent.com/threads/wip-two-color-icons.60568/",
-  "identifier": "com.wondible.pa.two_color_icons",
+  "identifier": "com.wondible.pa.two_color_icons_brighter",
   "priority": 100,
   "scenes": {
     "live_game_players": [
-      "coui://ui/mods/two_color_icons/live_game_players.css",
-      "coui://ui/mods/two_color_icons/live_game_players.js"
+      "coui://ui/mods/two_color_icons_brighter/live_game_players.css",
+      "coui://ui/mods/two_color_icons_brighter/live_game_players.js"
     ]
   },
   "signature": "not yet implemented",
-  "version": "1.2.0"
+  "version": "1.0.0"
 }
