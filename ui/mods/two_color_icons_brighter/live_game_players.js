@@ -19,7 +19,7 @@
     return brighterRgb(army.secondary_color, 1.0)
   }
 
-  $('.div_player_icon .fill').attr('data-bind', "style: {backgroundColor: $parent.primary($data)}")
+  $('.div_player_icon .fill').attr('data-bind', "style: {backgroundColor: $root.primary($data)}")
 
-  $('.div_player_icon .outline').replaceWith('<div class="outline outline_masked" data-bind="style: {backgroundColor: $parent.secondary($data)}"></div>')
+  $('.div_player_icon .outline').replaceWith('<div class="outline outline_masked" data-bind="style: {backgroundColor: $root.secondary($data)}"></div>')
 })()
