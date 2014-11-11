@@ -25,16 +25,18 @@ void main()
         // horrible, horrible hack to work aground webkit png handling
         texel.rgb = clamp((texel.rgb - 0.27) / 0.7, 0.0, 1.0);
 
-        vec3 outline = v_SelectedState > 0.0 ? vec3(1.0, 1.0, 1.0) : v_ColorSecondary.rgb;
-        vec3 body = v_ColorPrimary.rgb;
-        vec3 color = clamp(1.2 * sqrt(texel.r * mix(outline, body, pow(texel.g, 1.0 / 2.2) / texel.a + 0.00001)), 0.0, 1.0);
+        float gamma = 1.0/2.2;
+        vec3 secondary = pow(v_ColorSecondary.rgb, vec3(gamma, gamma, gamma));
+        vec3 outline = v_SelectedState > 0.0 ? vec3(1.0, 1.0, 1.0) : secondary;
+        vec3 body = pow(v_ColorPrimary.rgb, vec3(gamma, gamma, gamma));
+        vec3 color = texel.r * mix(outline, body, pow(texel.g, gamma) / texel.a + 0.00001);
 
         float alpha = texel.a;
 
         // check for hover
         if (abs(v_SelectedState) > 1.5)
         {
-            float mask = pow(texel.r, 1.0 / 2.2);
+            float mask = pow(texel.r, gamma);
             alpha = mix(min(1.0, 2.0 * alpha), alpha, mask);
             color = mix(vec3(1.0, 1.0, 1.0), color, mask);
         }
