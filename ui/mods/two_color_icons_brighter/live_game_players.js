@@ -16,7 +16,11 @@
   }
 
   model.secondary = function(army) {
-    return brighterRgb(army.secondary_color, 1.0)
+    if (army.secondary_color.toString() == army.primary_color.toString()) {
+      return 'rgb(0, 0, 0)'
+    } else {
+      return brighterRgb(army.secondary_color, 1.1)
+    }
   }
 
   $('.div_player_icon .fill').attr('data-bind', "style: {backgroundColor: $root.primary($data)}")
