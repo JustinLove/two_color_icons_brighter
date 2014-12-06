@@ -26,7 +26,12 @@ void main()
         texel.rgb = clamp((texel.rgb - 0.27) / 0.7, 0.0, 1.0);
 
         float gamma = 1.0/2.2;
-        vec3 secondary = pow(v_ColorSecondary.rgb, vec3(gamma, gamma, gamma));
+        vec3 secondary;
+        if (v_ColorSecondary == v_ColorPrimary) {
+          secondary = vec3(0.0, 0.0, 0.0);
+        } else {
+          secondary = pow(v_ColorSecondary.rgb, vec3(gamma, gamma, gamma));
+        }
         vec3 outline = v_SelectedState > 0.0 ? vec3(1.0, 1.0, 1.0) : secondary;
         vec3 body = pow(v_ColorPrimary.rgb, vec3(gamma, gamma, gamma));
         vec3 color = texel.r * mix(outline, body, pow(texel.g, gamma) / texel.a + 0.00001);
