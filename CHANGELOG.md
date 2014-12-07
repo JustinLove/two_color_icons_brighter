@@ -1,3 +1,7 @@
+## 1.2.0
+
+- Special case outline to black if primary and secondary are exactly equal
+
 ## 1.1.0
 
 - Switch to gamma-adjustment for color correction
