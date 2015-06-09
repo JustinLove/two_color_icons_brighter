@@ -1,5 +1,5 @@
 (function() {
-  $.get('coui://ui/mods/ui_icon_secondary_color/player-outline-mask.html', function(html) {
+  $.get('coui://ui/mods/two_color_icons_brighter/player-outline-mask.html', function(html) {
     $('svg:first').after(html)
   });
 

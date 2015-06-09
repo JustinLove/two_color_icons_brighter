@@ -1,3 +1,7 @@
+## 1.2.1
+
+- Fix a file not found (which apparently wasn't too significant)
+
 ## 1.2.0
 
 - Special case outline to black if primary and secondary are exactly equal
